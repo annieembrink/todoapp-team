@@ -28,8 +28,10 @@ document.querySelector('form').onsubmit = (e) => {
 
 // my function for editable
 function editOnclick(e) {
-    let listEl = e.target.parentNode;
-    let inputField = listEl.querySelector('p');
+    let listEl = e.target.parentElement;
+    let inputField = listEl.firstChild;
+
+    console.log('child', inputField)
 
     if (inputField.contentEditable == "true") {
         inputField.contentEditable = "false";
