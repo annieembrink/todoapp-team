@@ -20,3 +20,13 @@ document.querySelector('form').onsubmit = (e) => {
 
     inputField.value = '';
 }
+
+    // my function for editable
+    editBtn.onclick = function () {
+        let inputField = editBtn.previousElementSibling;
+        if (inputField.contentEditable == "true") {
+            inputField.contentEditable = "false";
+        } else {
+            inputField.contentEditable = "true";
+        }
+    };
