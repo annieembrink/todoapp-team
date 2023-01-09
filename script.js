@@ -20,3 +20,7 @@ document.querySelector('form').onsubmit = (e) => {
 
     inputField.value = '';
 }
+
+function deleteTodo () {
+    
+}
