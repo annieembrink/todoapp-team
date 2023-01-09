@@ -1,5 +1,7 @@
 let task = document.querySelector('p');
 
+
+
 document.querySelector('form').onsubmit = (e) => {
     e.preventDefault();
 
@@ -11,8 +13,11 @@ document.querySelector('form').onsubmit = (e) => {
     let delBtn = document.createElement('button');
     delBtn.textContent = 'delete';
 
+
     let editBtn = document.createElement('button');
     editBtn.textContent = 'edit';
+
+    editBtn.onclick = editOnclick;
 
     document.querySelector('li').appendChild(pTag);
     document.querySelector('li').appendChild(delBtn);
@@ -21,12 +26,14 @@ document.querySelector('form').onsubmit = (e) => {
     inputField.value = '';
 }
 
-    // my function for editable
-    editBtn.onclick = function () {
-        let inputField = editBtn.previousElementSibling;
-        if (inputField.contentEditable == "true") {
-            inputField.contentEditable = "false";
-        } else {
-            inputField.contentEditable = "true";
-        }
-    };
+// my function for editable
+function editOnclick(e) {
+    let listEl = e.target.parentNode;
+    let inputField = listEl.querySelector('p');
+
+    if (inputField.contentEditable == "true") {
+        inputField.contentEditable = "false";
+    } else {
+        inputField.contentEditable = "true";
+    }
+};
