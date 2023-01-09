@@ -25,8 +25,10 @@ document.querySelector('form').onsubmit = (e) => {
     inputField.value = '';
 }
 
+
 function deleteOnclick(e) {
     
     e.target.parentElement.remove();
     
 }
+
