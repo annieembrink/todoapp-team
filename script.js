@@ -12,6 +12,7 @@ document.querySelector('form').onsubmit = (e) => {
 
     let delBtn = document.createElement('button');
     delBtn.textContent = 'delete';
+    delBtn.onclick = deleteOnclick;
 
     let editBtn = document.createElement('button');
     editBtn.textContent = 'edit';
@@ -24,12 +25,10 @@ document.querySelector('form').onsubmit = (e) => {
     inputField.value = '';
 }
 
-    // my function for editable
-    editBtn.onclick = function () {
-        let inputField = editBtn.previousElementSibling;
-        if (inputField.contentEditable == "true") {
-            inputField.contentEditable = "false";
-        } else {
-            inputField.contentEditable = "true";
-        }
-    };
+
+function deleteOnclick(e) {
+    
+    e.target.parentElement.remove();
+    
+}
+
