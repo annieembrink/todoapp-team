@@ -12,6 +12,7 @@ document.querySelector('form').onsubmit = (e) => {
 
     let delBtn = document.createElement('button');
     delBtn.textContent = 'delete';
+    delBtn.onclick = deleteOnclick;
 
     let editBtn = document.createElement('button');
     editBtn.textContent = 'edit';
@@ -24,6 +25,8 @@ document.querySelector('form').onsubmit = (e) => {
     inputField.value = '';
 }
 
-function deleteTodo () {
+function deleteOnclick(e) {
+    
+    e.target.parentElement.remove();
     
 }
