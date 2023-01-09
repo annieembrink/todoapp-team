@@ -7,6 +7,8 @@ document.querySelector('form').onsubmit = (e) => {
 
     let inputField = document.getElementById('addTodo');
 
+    let liTag = document.createElement('li');
+
     let pTag = document.createElement('p');
     pTag.textContent = inputField.value;
 
@@ -19,6 +21,7 @@ document.querySelector('form').onsubmit = (e) => {
 
     editBtn.onclick = editOnclick;
 
+    document.querySelector('ul').appendChild(liTag);
     document.querySelector('li').appendChild(pTag);
     document.querySelector('li').appendChild(delBtn);
     document.querySelector('li').appendChild(editBtn);
